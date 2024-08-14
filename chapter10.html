@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PyPage : Chapter 10</title>
+<!-- prismCSS -->
+<link rel="stylesheet" href="prism.css"type="text/css" />
+<!-- bootstrapCSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<style>
+  *{
+    margin: 0;!important
+    padding: 0;!important
+  }
+  .code p{
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+</style>
+</head>
+<body>
+
+<nav class="navbar bg-body-tertiary">
+<div class="container-fluid">
+<a class="navbar-brand fw-light" href="index.html" style="font-size:1rem"><img src="pylogo.svg" alt="Py" width="30" height="24">PyPage by Dipesh</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title text-warning fw-800" id="offcanvasNavbarLabel">Chapters List</h5>
+<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+</div>
+<div class="offcanvas-body">
+<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+<li class="nav-item">
+<a class="nav-link " aria-current="page" href="index.html">Home</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter1.html">Chapter 1</a>
+</li>
+<li class="nav-item">
+<a class="nav-link " aria-current="page" href="chapter2.html">Chapter 2</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter3.html">Chapter 3</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter4.html">Chapter 4</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter5.html">Chapter 5</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter6.html">Chapter 6</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter7.html">Chapter 7</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter8.html">Chapter 8</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter9.html">Chapter 9</a>
+</li>
+<li class="nav-item">
+<a class="nav-link  link-primary fw-bold" aria-current="page" href="chapter10.html">Chapter 10</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter11.html">Chapter 11</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chaptee12.html">Chapter 12</a>
+</li>
+</div>
+</div>
+</div>
+</nav>
+<div class="container">
+    <div class="pt-5 pb-5 headline">
+    <h3 class="text-center text-secondary">Chapter <span class="fw-bold text-primary">10</span></h3>
+    <h5 class="text-center text-success">Object Oriented Programing (OOPs)</h5>
+    </div>
+    <div class="code">
+      <p class="text-secondary fw-medium" style="font-family:monospace;"<p>Q1.Create a calss programmers for storing information of few programmers working at microsoft.</p>
+<pre style="font-size:12px;"><code class="language-py">class programmer:
+	company = "Mircrosoft"
+	def __init__(self,name,salary):
+		self.name = name
+		self.salary = salary
+	def EmpInfo(self):
+		print(f"Name of Employee is {self.name} and his/her Salary is {self.salary}")
+		
+harry = programmer("harry",20000)
+carry = programmer("carry",25000)
+
+harry.EmpInfo()
+carry.EmpInfo()</code>
+</pre>
+</div>
+    <div class="code">
+      <p class="text-secondary fw-medium pt-2" style="font-family:monospace;">Q2.Write a class calculator capable of finding Square, Sq.Root and Cube of a given number.</p>
+    <pre style="font-size:12px;"><code class="language-py">class calculator:
+	def __init__(self,number):
+		self.num = number
+	
+	def square(self):
+		print(f"Squre of {self.num} is {self.num**2}")
+	def cube(self):
+		print(f"Cube of {self.num} is {self.num**3}")
+	def squareRoot(self):
+		print(f"Square root of {self.num} is {self.num**0.5}")
+
+inpNum = int(input("Enter number "))
+a = calculator(inpNum)
+a.square()
+a.cube()
+a.squareRoot()</code>
+</pre>
+</div>
+    <div class="code">
+      <p class="text-secondary fw-medium pt-2" style="font-family:monospace;">Q3.Create a class with a class attribute a; Create an object from it and set a directly using object a = 0. Does this change the class attribute?.</p>
+    <pre style="font-size:12px;"><code class="language-py">class hello:
+	a = 10
+
+harry = hello()
+harry.a = 0
+print(harry.a)
+print(hello.a)
+# object attribute does not change class atrribute but add an new object attribute with given value.</code>
+</pre>
+</div>
+    <div class="code">
+      <p class="text-secondary fw-medium pt-2" style="font-family:monospace;">Q4.Add a static method in problem 2 to greet the user with Hello.</p>
+  <pre style="font-size:12px;"><code class="language-py">class calculator:
+	def __init__(self,number):
+		self.num = number
+	
+	def square(self):
+		print(f"Squre of {self.num} is {self.num**2}")
+	def cube(self):
+		print(f"Cube of {self.num} is {self.num**3}")
+	def squareRoot(self):
+		print(f"Square root of {self.num} is {self.num**0.5}")
+	@staticmethod #staticmethod doesnot take self in argument
+	def greet():
+		print("Hello \n This is the best calculator by python")
+
+inpNum = int(input("Enter number "))
+a = calculator(inpNum)
+a.square()
+a.cube()
+a.squareRoot()
+a.greet()</code>
+</pre>
+</div>
+    <div class="code">
+      <p class="text-secondary fw-medium pt-2" style="font-family:monospace;">Q5.Write a class Train which has methods to book a ticket , getStatus(no of seats) and getFare(ticket price) information of train running under Indian Railways.</p><pre style="font-size:12px;"><code class="language-py">class train:
+	
+	def __init__(self, trainNo, seats, running, fear):
+		self.train = trainNo
+		self.seats = seats
+		self.run = running
+		self.fear = fear
+		
+	def booking(self):
+		
+		if(self.seats>0):
+			print(f"Your Ticket is booked successfully in {self.train} and seat no is {self.seats}")
+		self.seats = self.seats-1
+		
+			
+	def getStatus(self):
+		print(f"{self.train} is Running {self.run}")
+		print(f"{self.train} has seats available are {self.seats}")
+	
+	def getFare(self):
+		print(f"Ticket Fare of {self.train} is Rs. {self.fare}")
+		
+intercity = train("InterCity Express: 18001", 201 , "Late by 2.30 Hr", 120)
+southBihar = train("South Bihar Express : 13328", 12, "Right Time", 155)
+SounuExp = train("Sonua Town Express : 10023", "WL-33" ,"Before 12 min", 220)
+
+intercity.getStatus()
+intercity.booking()
+intercity.getStatus()
+intercity.booking()
+intercity.getStatus()</code>
+</pre>
+</div>
+    <div class="code">
+      <p class="text-secondary fw-medium pt-2" style="font-family:monospace;">Q6.Can you change the self parameter inside a class to somethis else(say "happy"). Try changing self to "happy" and see the effects..</p><pre style="font-size:12px;"><code class="language-py">class company():
+  def __init__(slf): #use slf in the place of self
+    slf.name = "My name is Dipesh"
+new = company()
+print(new.name)
+#code is working fine so Yes we change the name of self parameter</code>
+</pre>
+</div>
+
+</div>
+<footer class="bg-secondary-subtle text-center mt-2 pt-2 pb-2">
+  <p>&copy; 2024 PyPage By Dipesh</p>
+</footer>
+<!-- bootstrapjs -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<!-- prismJS -->
+<script src="prism.js" type="text/javascript"></script>
+</body>
+
+</html>

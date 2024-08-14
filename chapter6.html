@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PyPage : Chapter 6</title>
+<!-- prismCSS -->
+<link rel="stylesheet" href="prism.css"type="text/css" />
+<!-- bootstrapCSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<style>
+  *{
+    margin: 0;!important
+    padding: 0;!important
+  }
+  .code p{
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+</style>
+</head>
+<body>
+
+<nav class="navbar bg-body-tertiary">
+<div class="container-fluid">
+<a class="navbar-brand fw-light" href="index.html" style="font-size:1rem"><img src="pylogo.svg" alt="Py" width="30" height="24">PyPage by Dipesh</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title text-warning fw-800" id="offcanvasNavbarLabel">Chapters List</h5>
+<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+</div>
+<div class="offcanvas-body">
+<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+<li class="nav-item">
+<a class="nav-link " aria-current="page" href="index.html">Home</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter1.html">Chapter 1</a>
+</li>
+<li class="nav-item">
+<a class="nav-link " aria-current="page" href="chapter2.html">Chapter 2</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter3.html">Chapter 3</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter4.html">Chapter 4</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter5.html">Chapter 5</a>
+</li>
+<li class="nav-item">
+<a class="nav-link link-primary fw-bold" aria-current="page" href="chapter6.html">Chapter 6</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter7.html">Chapter 7</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter8.html">Chapter 8</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter9.html">Chapter 9</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter10.html">Chapter 10</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter11.html">Chapter 11</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chaptee12.html">Chapter 12</a>
+</li>
+</div>
+</div>
+</div>
+</nav>
+<div class="container">
+    <div class="pt-5 pb-5 headline">
+    <h3 class="text-center text-secondary">Chapter <span class="fw-bold text-primary">6</span></h3>
+    <h5 class="text-center text-success">Conditional Expressions</h5>
+    </div>
+    <div class="code">
+      <p class="text-secondary fw-medium" style="font-family:monospace;"<p>Q1.Write a program to find greatest of four numbers entered by the user.</p>
+<pre style="font-size:12px;"><code class="language-py">a = int(input("enter first number: "))
+b = int(input("enter second number: "))
+c = int(input("enter third number: "))
+d = int(input("enter fourth number: "))
+
+if(a>b):
+	n1 = a
+else:
+	n1 = b
+
+if(c>d):
+	n2 = c
+else:
+	n2 = d
+	
+if(n1>n2):
+	print("Greatest number is: ", n1)
+else:
+	print("Greatest number is: ", n2)
+</code>
+</pre>
+</div>
+    <div class="code">
+      <p class="text-secondary fw-medium pt-2" style="font-family:monospace;">Q2.Write a Python program to find out whether a student is pass or fail, if it requires total 40% and at least 33% in each subjext to pass. Assume 3 subjects and take marks as an input from user.</p>
+    <pre style="font-size:12px;"><code class="language-py">m = int(input("Enter the marks of maths: "))
+s = int(input("Enter the marks of science: "))
+e = int(input("Enter the marks of english: "))
+
+if(m>=33):
+	pass
+else:
+	print("You are failed in Maths")
+	
+if(s>=33):
+	pass
+else:
+	print("You are failed in Science")
+	
+if(e>=33):
+	pass
+else:
+	print("You are failed in English")
+	
+if(e>=33 and s>=33 and m>=33 and (m+s+e)/3>=44):
+	print("Your are passed")
+else:
+	print("Your are failed \n You obtained less than 44%")
+	</code>
+</pre>
+</div>
+    <div class="code">
+      <p class="text-secondary fw-medium pt-2" style="font-family:monospace;">Q3.A spam comment is definded  as a text containing following keywords: <br>"click this","Make a lot of money","buy now", "subscribe this" <br />Write a program to detect these spams.</p>
+    <pre style="font-size:12px;"><code class="language-py">t = input("Enter Message: ")
+if ("make a lot of money" in t):
+	print("It is a spam")
+elif ("buy now" in t):
+	print("It is a spam")
+	
+elif ("subscribe this" in t):
+	print("It is a spam")
+
+elif ("click this" in t):
+	print("It is a spam")
+	
+elif ("send money" in t):
+	print("It is a spam")
+else:
+	print("It is not a spam")</code>
+</pre>
+</div>
+    <div class="code">
+      <p class="text-secondary fw-medium pt-2" style="font-family:monospace;">Q4.Write a program to find whether a given username contains less than 10 characters or not.</p>
+  <pre style="font-size:12px;"><code class="language-py">user = input("Enter username: ")
+if(len(user)<10):
+	print("Please enter minimum 10 character")
+else:
+	print("Your username is accepted")</code>
+</pre>
+</div>
+    <div class="code">
+      <p class="text-secondary fw-medium pt-2" style="font-family:monospace;">Q5.Write a program which find out whether a given name is present in a list or not.</p><pre style="font-size:12px;"><code class="language-py">nameList = ["Janki","Ramesh","Dipesh","Shalini","John"]
+name = input("Enter the name: ")
+for i in nameList:
+	if i == name:
+		print("Yes name is found")</code>
+</pre>
+</div>
+    <div class="code">
+      <p class="text-secondary fw-medium pt-2" style="font-family:monospace;">Q6.Write a program to calculate the grade of a student from his marks from the following scheme: <br />90-100 = A+<br />80-90 = A <br />70-80 = B <br />60-70 = C <br />50-60 = D <br /> &lt;50 = fail</p><pre style="font-size:12px;"><code class="language-py">print("***** Grade Generating System*****")
+mark = int(input("Enter your marks to know your grade \n "))
+if(mark>100 or mark<=0):
+	grade = "Enter valid marks"
+elif(mark>=90 and mark<=100):
+	grade = "A+"
+elif(mark>=80 and mark<90):
+	grade = "A"
+elif(mark>=70 and mark<80):
+	grade = "B"
+elif(mark>=60 and mark<70):
+	grade = "C"
+elif(mark>=50 and mark<60):
+	grade = "D"
+else:
+	grade = "Fail"
+print(grade)</code>
+</pre>
+</div>
+    <div class="code">
+      <p class="text-secondary fw-medium pt-2" style="font-family:monospace;">Q7.Write a python program to find out whether a given post is talkin about "Harry" or not.</p><pre style="font-size:12px;"><code class="language-py">post = input("Enter the post")
+
+if("harry" in post):
+	print("This post is taking about harry")
+else:
+	print("this post is not taking about harry")</code>
+</pre>
+</div>
+</div>
+<footer class="bg-secondary-subtle text-center mt-2 pt-2 pb-2">
+  <p>&copy; 2024 PyPage By Dipesh</p>
+</footer>
+<!-- bootstrapjs -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<!-- prismJS -->
+<script src="prism.js" type="text/javascript"></script>
+</body>
+
+</html>

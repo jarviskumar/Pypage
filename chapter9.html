@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PyPage : Chapter 9</title>
+<!-- prismCSS -->
+<link rel="stylesheet" href="prism.css"type="text/css" />
+<!-- bootstrapCSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<style>
+  *{
+    margin: 0;!important
+    padding: 0;!important
+  }
+  .code p{
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+</style>
+</head>
+<body>
+
+<nav class="navbar bg-body-tertiary">
+<div class="container-fluid">
+<a class="navbar-brand fw-light" href="index.html" style="font-size:1rem"><img src="pylogo.svg" alt="Py" width="30" height="24">PyPage by Dipesh</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+<div class="offcanvas-header">
+<h5 class="offcanvas-title text-warning fw-800" id="offcanvasNavbarLabel">Chapters List</h5>
+<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+</div>
+<div class="offcanvas-body">
+<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+<li class="nav-item">
+<a class="nav-link " aria-current="page" href="index.html">Home</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter1.html">Chapter 1</a>
+</li>
+<li class="nav-item">
+<a class="nav-link " aria-current="page" href="chapter2.html">Chapter 2</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter3.html">Chapter 3</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter4.html">Chapter 4</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter5.html">Chapter 5</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter6.html">Chapter 6</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter7.html">Chapter 7</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter8.html">Chapter 8</a>
+</li>
+<li class="nav-item">
+<a class="nav-link link-primary fw-bold" aria-current="page" href="chapter9.html">Chapter 9</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter10.html">Chapter 10</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chapter11.html">Chapter 11</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" aria-current="page" href="chaptee12.html">Chapter 12</a>
+</li>
+</div>
+</div>
+</div>
+</nav>
+<div class="container">
+    <div class="pt-5 pb-5 headline">
+    <h3 class="text-center text-secondary">Chapter <span class="fw-bold text-primary">9</span></h3>
+    <h5 class="text-center text-success">File I/O</h5>
+    </div>
+    <div class="code">
+      <p class="text-secondary fw-medium" style="font-family:monospace;"<p>Q1.Write a program to read the text from a given file "poem.txt", and find out wether it contains the word "twinkle".</p>
+<pre style="font-size:12px;"><code class="language-py">with open("poems.txt","r") as f:
+	data = f.read()
+	data = data.lower()
+	if "twinkle" in data:
+		print("Yes Twinkle is present")
+	else:
+		print("No Twinkle is not present")
+#You Must have poem.txt file in same folder or you should give proper path.</code>
+</pre>
+</div>
+    <div class="code">
+      <p class="text-secondary fw-medium pt-2" style="font-family:monospace;">Q2.The game() functionin a program list a user play a game and returns the score as an integer, You need to read a file "hiscore.txt" which is either blank or contains the previous Hi-score. You need to write a program to update the Hi-score whenever game() beats the Hi-score</p>
+    <pre style="font-size:12px;"><code class="language-py">def game():
+	return 1000
+	
+score = game()
+
+with open("hiscore.txt","r") as f:
+	d = f.read()
+if (d ==""):
+	with open("hiscore.txt","w") as f:
+		f.write(str(score))
+
+elif (int(d)&lt;score):
+	with open("hiscore.txt","w")as f:
+		f.write(str(score))
+# "r" -->read mode "w" -->write mode "a" --> append mode</code>
+</pre>
+</div>
+    <div class="code">
+      <p class="text-secondary fw-medium pt-2" style="font-family:monospace;">Q3.Write a program to generate multiplication tables form 2 to 20 and write it to the different files. Place these files in a folder for a 13 years old boy.</p>
+    <pre style="font-size:12px;"><code class="language-py">for i in range(2,21):
+	with open(f"Tables/Multiplication_table_{i}.txt", "w") as f:
+		for j in range(1,11):
+			f.write(f"{i}x{j} = {i*j}\n")
+		
+	i+=1</code>
+</pre>
+</div>
+    <div class="code">
+      <p class="text-secondary fw-medium pt-2" style="font-family:monospace;">Q4.A file contains a word "Donkey" multiple times. You need to write a program which replace this word with ##### by updating the same file.</p>
+  <pre style="font-size:12px;"><code class="language-py">with open("donkey.txt","r") as f:
+	text = f.read()
+	text = text.lower()
+if "donkey" in text:
+	text = text.replace("donkey","######")
+	with open("donkey.txt", "w") as f:
+		f.write(text)
+	</code>
+</pre>
+</div>
+    <div class="code">
+      <p class="text-secondary fw-medium pt-2" style="font-family:monospace;">Q5.Repeat problem 5 for a list of such words to be censored.</p><pre style="font-size:12px;"><code class="language-py">list = ["donkey","fool","idiot","dumb"]
+
+with open("censorText.txt") as f:
+	text = f.read()
+	
+for word in list:
+	text = text.replace(word, "#####")
+	
+	with open("censorText.txt","w")as f:
+		f.write(text)</code>
+</pre>
+</div>
+    <div class="code">
+      <p class="text-secondary fw-medium pt-2" style="font-family:monospace;">Q6.Write a python to mine a log file and find out whether it contains "Python".</p><pre style="font-size:12px;"><code class="language-py">with open("log.txt",'r') as f:
+		log = f.read()
+if("python" in log):
+	print("Python is detected")
+else:
+	print("404 Error \n Python not found")</code>
+</pre>
+</div>
+    <div class="code">
+      <p class="text-secondary fw-medium pt-2" style="font-family:monospace;">Q7.Write a program to find out the line num ber where python is present from QuestionNo 6.</p><pre style="font-size:12px;"><code class="language-py">text = True
+n = 1
+with open("log.txt", "r") as f :
+	while text:
+		text = f.readline()
+		if ("python" in text.lower()):
+			print(text)
+			print(f"Python is detected in line no {n}\n\n")
+		n+=1
+	
+	if ("python" != text.lower()): #this statement execute after all line was ended but i want to print this only  if python is not found. if i used it in main if loop it will execute every time. may be in future i will solve this.
+		print("No more Python")</code>
+</pre>
+</div>
+    <div class="code">
+      <p class="text-secondary fw-medium pt-2" style="font-family:monospace;">Q8.Write a program to make a copy of a text file "this.txt".</p><pre style="font-size:12px;"><code class="language-py">with open("this.txt", "r") as f:
+	d = f.read() #save all data of this.txt in d
+	
+with open("copy.txt", "w") as f:
+	f.write(d) #write that data in copy.txt
+</code>
+</pre>
+</div>
+    <div class="code">
+      <p class="text-secondary fw-medium pt-2" style="font-family:monospace;">Q9.Write a program to find out whether a file is identical & match the content of another file.</p><pre style="font-size:12px;"><code class="language-py">file1 = open("this.txt","r")
+file2 = open("copy.txt","r")
+
+if(file1.read() == file2.read()):
+	print("Files are identical")
+else:
+	print("Files are not identical")
+	
+file1.close()
+file2.close()</code>
+</pre>
+</div>
+    <div class="code">
+      <p class="text-secondary fw-medium pt-2" style="font-family:monospace;">Q10.Write a program to wipe out the contains of a file using python.</p><pre style="font-size:12px;"><code class="language-py">with open("copy.txt", "w") as f:
+	f.write("")</code>
+</pre>
+</div>
+    <div class="code">
+      <p class="text-secondary fw-medium pt-2" style="font-family:monospace;">Q11.Write a program to rename a file to rename_by_python.txt".</p><pre style="font-size:12px;"><code class="language-py">import os
+
+with open("copy.txt",'r') as f:
+  data = f.read()
+with open("rename_by_python.txt", 'w') as f:
+  f.write(data)
+
+os.remove("copy.txt") #removed the file using os module
+</code>
+</pre>
+</div>
+
+</div>
+<footer class="bg-secondary-subtle text-center mt-2 pt-2 pb-2">
+  <p>&copy; 2024 PyPage By Dipesh</p>
+</footer>
+<!-- bootstrapjs -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<!-- prismJS -->
+<script src="prism.js" type="text/javascript"></script>
+</body>
+
+</html>
